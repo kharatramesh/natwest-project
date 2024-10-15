@@ -1,0 +1,7 @@
+---
+- name: install docker
+  hosts: localhost
+  tasks:
+  - name: install docker
+    dnf:
+      

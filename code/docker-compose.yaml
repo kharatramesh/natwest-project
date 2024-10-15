@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: ./web.df
+    container_name: frontend
+    ports:
+    - "9098:80"
+    depends_on:
+    - database
+  database:
+    build:
+      context: .
+      dockerfile: ./db.df
+    container_name: backend
+    environment:
+    - MYSQL_ROOT_PASSWORD=123
